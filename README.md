@@ -33,6 +33,8 @@ Airmod仅是一个旁系插件，你需要完整的[Zonemod](https://github.com/
 |Scout |150   |0.9   |4000 |400     |0      |0.1    |4.05    |10      |
 |AWP   |600+300(E)|0.8   |4000 |1000     |0      |0    |5.75    |65      |
 
+![T%H1$BFKZL14OCYIA3Q@EXJ](https://user-images.githubusercontent.com/70164765/184548546-af917a61-9f70-461e-a20f-b9e3b605a665.png)
+
 |     |伤害|纵向扩散|横向扩散|
 |-----|----|-------|--------|
 |Pistol|18x3|2.5   |1.5     |
