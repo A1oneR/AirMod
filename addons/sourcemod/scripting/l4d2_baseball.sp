@@ -142,6 +142,8 @@ public Action timer (Handle timer, int client)
 				EmitSoundToAll((GetRandomInt(0, 1) == 0 ? HIT_1 : HIT_2), SOUND_FROM_WORLD, .origin = vHit);
 				
 				PrintToChatAll("\x04%N \x03baseballed projectile for \x04%.2f \x03velocity!", client, GetVectorLength(vVelocity));
+				int origin = GetEntProp(client, Prop_Send, "m_iHealth");
+				SetEntProp(client, Prop_Send, "m_iHealth", origin + 10);
 				return Plugin_Stop;
 			}
 		}
