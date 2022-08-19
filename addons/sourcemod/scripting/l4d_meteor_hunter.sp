@@ -10,9 +10,9 @@
 public Plugin myinfo = 
 {
 	name = "Meteor Hunter",
-	author = "Spirit, Harry",
+	author = "Spirit, Harry, Air",
 	description = "high pounces cause meteor strike",
-	version = "1.5",
+	version = "1.6",
 	url = "https://forums.alliedmods.net/showthread.php?p=2712447"
 }
 
@@ -46,11 +46,15 @@ public APLRes AskPluginLoad2(Handle myself, bool late, char[] error, int err_max
 #define CLASSNAME_LENGTH 	64
 
 ConVar g_hCvarAllow, g_hCvarModes, g_hCvarModesOff, g_hCvarModesTog, g_hCvarDistance, g_hCvarRange, g_hCvarDamage,
+	g_hCvarRangeMode, g_hCvarRangeMin, g_hCvarRangeMax,
+	g_hCvarPowerMode, g_hCvarPowerMin, g_hCvarPowerMax,
 	g_hCvarPower, g_hCvarZMult;
 ConVar g_hCvarMPGameMode;
 
 bool g_bCvarAllow, g_bMapStarted;
-float g_fRange, g_fDamage, g_fDistance, g_fCvarPower, g_fCvarZMult;
+float g_fRange, g_fDamage, g_fDistance, g_fCvarPower, g_fCvarZMult,
+      g_fRangeMode, g_fRangeMax, g_fRangeMin, g_fCvarPowerMode, g_fCvarPowerMax, g_fCvarPowerMin;
+float distance;
 static const float L4D_Z_MULT = 1.6;
 
 public void OnPluginStart()
@@ -60,9 +64,15 @@ public void OnPluginStart()
 	g_hCvarModesOff = CreateConVar("l4d_meteor_hunter_modes_off",	"",	"Turn off the plugin in these game modes, separate by commas (no spaces). (Empty = none).", CVAR_FLAGS );
 	g_hCvarModesTog = CreateConVar("l4d_meteor_hunter_modes_tog",   "0", "Turn on the plugin in these game modes. 0=All, 1=Coop, 2=Survival, 4=Versus, 8=Scavenge. Add numbers together.", CVAR_FLAGS );
 	g_hCvarDistance  = CreateConVar("l4d_meteor_hunter_distance", "800", "Hunter Pounce Distance needed to trigger meteor strike.", CVAR_FLAGS, true, 0.0);
-	g_hCvarRange = CreateConVar("l4d_meteor_hunter_range", "200", "Hunter meteor strike range.", CVAR_FLAGS, true, 0.0);
+	g_hCvarRangeMode = CreateConVar("l4d_meteor_hunter_range_mod", "0.25", "Hunter meteor strike range mod will be set at? (>0.Liner Range, X per Distance; <=0.Solid Range)", CVAR_FLAGS, true, 0.0);
+	g_hCvarRangeMin = CreateConVar("l4d_meteor_hunter_range_min", "50", "Hunter meteor strike Min range.(Liner Range)", CVAR_FLAGS, true, 0.0);
+	g_hCvarRangeMax = CreateConVar("l4d_meteor_hunter_range_max", "500", "Hunter meteor strike Max range. (Liner Range)", CVAR_FLAGS, true, 0.0);
+	g_hCvarRange = CreateConVar("l4d_meteor_hunter_range", "200", "Hunter meteor strike range.(When set to Solid Range)", CVAR_FLAGS, true, 0.0);
 	g_hCvarDamage = CreateConVar("l4d_meteor_hunter_damage", "15.0", "Damage caused by meteor strike.", CVAR_FLAGS, true, 0.0);
-	g_hCvarPower = CreateConVar("l4d_meteor_hunter_power", "300", "How much force is applied to the survivor (meteor strike).", FCVAR_NOTIFY, true, 0.0);
+	g_hCvarPowerMode = CreateConVar("l4d_meteor_hunter_power_mod", "0.3", "Hunter meteor strike power mod will be set at? (>0.Liner Power, X per Distance; <=0.Solid Power)", CVAR_FLAGS, true, 0.0);
+	g_hCvarPowerMin = CreateConVar("l4d_meteor_hunter_power_min", "50", "Hunter meteor strike Min Power.(Liner Power)", CVAR_FLAGS, true, 0.0);
+	g_hCvarPowerMax = CreateConVar("l4d_meteor_hunter_power_max", "1000", "Hunter meteor strike Max Power. (Liner Power)", CVAR_FLAGS, true, 0.0);
+	g_hCvarPower = CreateConVar("l4d_meteor_hunter_power", "300", "How much force is applied to the survivor (meteor strike) (When set to Solid Power).", FCVAR_NOTIFY, true, 0.0);
 	g_hCvarZMult = CreateConVar("l4d_meteor_hunter_vertical_mult", "1.5", "Vertical force multiplier (meteor strike).", FCVAR_NOTIFY, true, 0.0);
 
 	g_hCvarMPGameMode = FindConVar("mp_gamemode");
@@ -73,8 +83,14 @@ public void OnPluginStart()
 	g_hCvarModesTog.AddChangeHook(ConVarChanged_Allow);
 	g_hCvarDistance.AddChangeHook(ConVarChanged_Cvars);
 	g_hCvarRange.AddChangeHook(ConVarChanged_Cvars);
+	g_hCvarRangeMode.AddChangeHook(ConVarChanged_Cvars);
+	g_hCvarRangeMin.AddChangeHook(ConVarChanged_Cvars);
+	g_hCvarRangeMax.AddChangeHook(ConVarChanged_Cvars);
 	g_hCvarDamage.AddChangeHook(ConVarChanged_Cvars);
 	g_hCvarPower.AddChangeHook(ConVarChanged_Cvars);
+	g_hCvarPowerMode.AddChangeHook(ConVarChanged_Cvars);
+	g_hCvarPowerMin.AddChangeHook(ConVarChanged_Cvars);
+	g_hCvarPowerMax.AddChangeHook(ConVarChanged_Cvars);
 	g_hCvarZMult.AddChangeHook(ConVarChanged_Cvars);
 
 	//Autoconfig for plugin
@@ -118,8 +134,14 @@ void GetCvars()
 {
 	g_fDistance = g_hCvarDistance.FloatValue;
 	g_fRange = g_hCvarRange.FloatValue;
+	g_fRangeMode = g_hCvarRangeMode.FloatValue;
+	g_fRangeMin = g_hCvarRangeMin.FloatValue;
+	g_fRangeMax = g_hCvarRangeMax.FloatValue;
 	g_fDamage = g_hCvarDamage.FloatValue;
 	g_fCvarPower = g_hCvarPower.FloatValue;
+	g_fCvarPowerMode = g_hCvarPowerMode.FloatValue;
+	g_fCvarPowerMin = g_hCvarPowerMin.FloatValue;
+	g_fCvarPowerMax = g_hCvarPowerMax.FloatValue;
 	g_fCvarZMult = g_hCvarZMult.FloatValue;
 }
 public void OnConfigsExecuted()
@@ -219,7 +241,7 @@ public void OnGamemode(const char[] output, int caller, int activator, float del
 public void Event_LandedPounce(Event hEvent, const char[] name, bool dontBroadcast) 
 {
 	int client = GetClientOfUserId(hEvent.GetInt("userid"));
-	float distance = hEvent.GetFloat("distance");
+	distance = hEvent.GetFloat("distance");
 	int victim = GetClientOfUserId(hEvent.GetInt("victim"));
 	if(client > 0 && IsClientInGame(client))
 	{
@@ -227,7 +249,120 @@ public void Event_LandedPounce(Event hEvent, const char[] name, bool dontBroadca
 		{
 			CreateHit(client);
 			CreateForces(client, victim);
-			CPrintToChatAll("[{olive}TS{default}] {green}%N{default} 的高撲造成核彈衝擊波", client);
+			
+			if (g_fCvarPowerMode <= 0.0 && g_fRangeMode <= 0.0)
+			{
+				switch (GetRandomInt(1, 5))
+				{
+					case 1:
+					{
+						CPrintToChatAll("[{olive}AS{default}] {green}%N{default} Just landed like SuperMan.", client);
+					}
+					case 2:
+					{
+						CPrintToChatAll("[{olive}AS{default}] {green}%N{default} Knocked down the Survivors.", client);
+					}
+					case 3:
+					{
+						CPrintToChatAll("[{olive}AS{default}] {green}%N{default} Punched the Survivors Guts.", client);
+					}
+					case 4:
+					{
+						CPrintToChatAll("[{olive}AS{default}] {green}%N{default} Pounced like a Meteor.", client);
+					}
+					case 5:
+					{
+						CPrintToChatAll("[{olive}AS{default}] {green}%N{default} Dropped a Nuke.", client);
+					}
+				}
+			}
+			else if (g_fCvarPowerMode <= 0.0 && g_fRangeMode > 0.0)
+			{
+				float Range = g_fRangeMode * (distance - g_fDistance) + g_fRangeMin;
+				if (Range > g_fRangeMax) Range = g_fRangeMax;
+				switch (GetRandomInt(1, 5))
+				{
+					case 1:
+					{
+						CPrintToChatAll("[{olive}AS{default}] {green}%N{default} Just landed like SuperMan.(R:{olive}%.1f{default})", client, Range);
+					}
+					case 2:
+					{
+						CPrintToChatAll("[{olive}AS{default}] {green}%N{default} Knocked down the Survivors.(R:{olive}%.1f{default})", client, Range);
+					}
+					case 3:
+					{
+						CPrintToChatAll("[{olive}AS{default}] {green}%N{default} Punched the Survivors Guts.(R:{olive}%.1f{default})", client, Range);
+					}
+					case 4:
+					{
+						CPrintToChatAll("[{olive}AS{default}] {green}%N{default} Pounced like a Meteor.(R:{olive}%.1f{default})", client, Range);
+					}
+					case 5:
+					{
+						CPrintToChatAll("[{olive}AS{default}] {green}%N{default} Dropped a Nuke.(R:{olive}%.1f{default})", client, Range);
+					}
+				}
+			}
+			else if (g_fCvarPowerMode > 0.0 && g_fRangeMode <= 0.0)
+			{
+				float Power = g_fCvarPowerMode * (distance - g_fDistance) + g_fCvarPowerMin;
+				if (Power > g_fCvarPowerMax) Power = g_fCvarPowerMax;
+				switch (GetRandomInt(1, 5))
+				{
+					case 1:
+					{
+						CPrintToChatAll("[{olive}AS{default}] {green}%N{default} Just landed like SuperMan.(P:{olive}%.1f{default})", client, Power);
+					}
+					case 2:
+					{
+						CPrintToChatAll("[{olive}AS{default}] {green}%N{default} Knocked down the Survivors.(P:{olive}%.1f{default})", client, Power);
+					}
+					case 3:
+					{
+						CPrintToChatAll("[{olive}AS{default}] {green}%N{default} Punched the Survivors Guts.(P:{olive}%.1f{default})", client, Power);
+					}
+					case 4:
+					{
+						CPrintToChatAll("[{olive}AS{default}] {green}%N{default} Pounced like a Meteor.(P:{olive}%.1f{default})", client, Power);
+					}
+					case 5:
+					{
+						CPrintToChatAll("[{olive}AS{default}] {green}%N{default} Dropped a Nuke.(P:{olive}%.1f{default})", client, Power);
+					}
+				}
+			}
+			else if (g_fCvarPowerMode > 0.0 && g_fRangeMode > 0.0)
+			{
+				float Range = g_fRangeMode * (distance - g_fDistance) + g_fRangeMin;
+				if (Range > g_fRangeMax) Range = g_fRangeMax;
+				float Power = g_fCvarPowerMode * (distance - g_fDistance) + g_fCvarPowerMin;
+				if (Power > g_fCvarPowerMax) Power = g_fCvarPowerMax;
+				switch (GetRandomInt(1, 5))
+				{
+					case 1:
+					{
+						CPrintToChatAll("[{olive}AS{default}] {green}%N{default} Just landed like SuperMan.(R:{olive}%.1f{default} P:{red}%.1f{default})", client, Range, Power);
+					}
+					case 2:
+					{
+						CPrintToChatAll("[{olive}AS{default}] {green}%N{default} Knocked down the Survivors.(R:{olive}%.1f{default} P:{red}%.1f{default})", client, Range, Power);
+					}
+					case 3:
+					{
+						CPrintToChatAll("[{olive}AS{default}] {green}%N{default} Punched the Survivors Guts.(R:{olive}%.1f{default} P:{red}%.1f{default})", client, Range, Power);
+					}
+					case 4:
+					{
+						CPrintToChatAll("[{olive}AS{default}] {green}%N{default} Pounced like a Meteor.(R:{olive}%.1f{default} P:{red}%.1f{default})", client, Range, Power);
+					}
+					case 5:
+					{
+						CPrintToChatAll("[{olive}AS{default}] {green}%N{default} Dropped a Nuke.(R:{olive}%.1f{default} P:{red}%.1f{default})", client, Range, Power);
+					}
+				}
+			}
+			//CPrintToChatAll("[{olive}AS{default}] {green}%N{default} 的高撲造成核彈衝擊波", client);
 		}
 	}
 }
@@ -369,14 +504,38 @@ void CreateForces(int client, int victim)
 			GetClientAbsOrigin(i, targetpos);
 			
 			dist = GetVectorDistance(hunterPos, targetpos);
-			if ( dist <= g_fRange )
+			
+			float RangeCac;
+
+			if (g_fRangeMode <= 0)
+			{
+				RangeCac = g_fRange;
+			}
+			else
+			{
+				RangeCac = g_fRangeMode * (distance - g_fDistance) + g_fRangeMin;
+				if (RangeCac > g_fRangeMax) RangeCac = g_fRangeMax;
+			}
+			if ( dist <= RangeCac )
 			{
 				GetClientEyeAngles(client, HeadingVector);
 				GetEntPropVector(i, Prop_Data, "m_vecVelocity", resulting);
+				
+				float PowerCac;
 
-				resulting[0] += Cosine(DegToRad(HeadingVector[1])) * g_fCvarPower;
-				resulting[1] += Sine(DegToRad(HeadingVector[1])) * g_fCvarPower;
-				resulting[2] = g_fCvarPower * g_fCvarZMult;
+				if (g_fCvarPowerMode <= 0)
+				{
+					PowerCac = g_fCvarPower;
+				}
+				else
+				{
+					PowerCac = g_fCvarPowerMode * (distance - g_fDistance) + g_fCvarPowerMin;
+					if (PowerCac > g_fCvarPowerMax) PowerCac = g_fCvarPowerMax;
+				}
+
+				resulting[0] += Cosine(DegToRad(HeadingVector[1])) * PowerCac;
+				resulting[1] += Sine(DegToRad(HeadingVector[1])) * PowerCac;
+				resulting[2] = PowerCac * g_fCvarZMult;
 
 				if (L4D2Version == false){
 					resulting[2] *= L4D_Z_MULT;
