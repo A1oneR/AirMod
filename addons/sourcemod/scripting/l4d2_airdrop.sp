@@ -436,6 +436,8 @@ public void OnPluginStart()
 	RegAdminCmd("sm_airdrop_reload_config", sm_airdrop_reload_config, ADMFLAG_ROOT);
 	RegAdminCmd("sm_airdrop_info_dump", sm_airdrop_info_dump, ADMFLAG_ROOT);
 	RegAdminCmd("sm_airdrop_weapons_rolling_test", sm_airdrop_weapons_rolling_test, ADMFLAG_ROOT);
+	
+	HookEvent("round_end", Event_OnRoundEnd, EventHookMode_PostNoCopy);
 }
 
 public void OnPluginEnd()
@@ -466,7 +468,7 @@ public void OnMapStart()
 	PrecacheParticle(PARTICLE_FUSE);
 }
 
-public void OnRoundEnd()
+public void Event_OnRoundEnd(Event event, const char[] name, bool dontBroadcast)
 {
 	DeleteEntities();
 	g_hAirdropTimer = null;
