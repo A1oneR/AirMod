@@ -466,6 +466,12 @@ public void OnMapStart()
 	PrecacheParticle(PARTICLE_FUSE);
 }
 
+public void OnRoundEnd()
+{
+	DeleteEntities();
+	g_hAirdropTimer = null;
+}
+
 public void OnMapEnd()
 {
 	DeleteEntities();
