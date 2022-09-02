@@ -18,7 +18,7 @@ public Plugin myinfo =
     version = "0.1"
 }
 
-ConVar sv_melee_force_projectile, sv_melee_radius_projectile, sv_melee_force_boost_projectile_up, sv_melee_deflect_filter;
+ConVar sv_melee_force_projectile, sv_melee_radius_projectile, sv_melee_force_boost_projectile_up, sv_melee_recover_projectile, sv_melee_deflect_filter;
 int g_iLaser, g_iGlow;
 
 public void OnPluginStart()
@@ -26,6 +26,7 @@ public void OnPluginStart()
 	sv_melee_force_projectile = CreateConVar("sv_melee_force_projectile", "0.6");
 	sv_melee_force_boost_projectile_up = CreateConVar("sv_melee_force_boost_projectile_up", "250.0");
 	sv_melee_radius_projectile = CreateConVar("sv_melee_radius_projectile", "75.0");
+	sv_melee_recover_projectile = CreateConVar("sv_melee_recover_projectile", "25.0");
 	sv_melee_deflect_filter = CreateConVar("sv_melee_deflect_filter", "");
 
 	AutoExecConfig(true, "l4d2_baseball");
@@ -143,7 +144,8 @@ public Action timer (Handle timer, int client)
 				
 				PrintToChatAll("\x04%N \x03baseballed projectile for \x04%.2f \x03velocity!", client, GetVectorLength(vVelocity));
 				int origin = GetEntProp(client, Prop_Send, "m_iHealth");
-				SetEntProp(client, Prop_Send, "m_iHealth", origin + 10);
+				int recover = GetConVarInt(sv_melee_recover_projectile);
+				SetEntProp(client, Prop_Send, "m_iHealth", origin + recover);
 				return Plugin_Stop;
 			}
 		}

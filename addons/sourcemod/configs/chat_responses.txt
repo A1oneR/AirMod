@@ -1,0 +1,29 @@
+// {default}
+// {olive}
+// {green}
+// {blue}
+// {red}
+// {lightgreen}
+
+"ChatResponses"
+{
+	"OP"
+	{
+		"text"		"{lightgreen}Air{default}: OP人有点多，记不住"
+	}
+	
+	"IP"
+	{
+		"text"		"{lightgreen}Air{default}: 进群拿IP呗"
+	}
+
+	"QQ"
+	{
+		"text"		"{lightgreen}Air{default}: 792461926，还有个老群不透露"
+	}
+
+	"help"
+	{
+		"text"		"{lightgreen}Air{default}: 不要惹事升非就行了"
+	}
+}
