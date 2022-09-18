@@ -1,0 +1,62 @@
+﻿﻿// Advertisements 2.1
+// by Tsunami
+//
+// Types
+// -----
+// center: Center message
+// chat: Chat message
+// hint: Hint message
+// menu: Menu message
+// top: Top message
+//
+// Flags (optional)
+// -----
+// Accepts flags of admins that will not see the advertisement.
+// When omitted everyone will see the advertisement.
+// When left empty only admins will see the advertisement.
+
+"Advertisements"
+{
+    "1"
+    {
+        "chat"		"{lightgreen}你是一个一个"
+    }
+    "2"
+    {
+        "chat"		"{lightgreen}本服主要内容为zm改包抗，存在部分特色内容。服务器刚刚搭建，游戏内容会慢慢完善，将来会有更多服务器搭建。如对本服有建议，联系事务群或Steam_WeiMeng"
+    }
+    "3"
+    {
+        "chat"		"{lightgreen}本服务器为萌新搭建，如有大佬光临本服，希望大佬们能多多开麦，指挥教学，而不是黑车炸鱼，更不要随意投票踢人（爷新除外）"
+    }
+    "4"
+    {
+        "chat"		"{lightgreen}萌新游玩时，扮演生还者请跟紧队友，确保能和队友互救；扮演感染者一般不要单上，团队合作造成更高伤害；按C开麦交流战术能提升队伍战斗力，但请注意文明游戏"
+    }
+    "5"
+    {
+        "chat"		"{lightgreen}教学视频可在Bilibili搜索：1、落子老师的VTChina  2、演哥（温柔可爱善良的导演）求生教学合集  3、可啡老师的L4HF  4、A1R老师的5分钟学会hunter的基本技巧"
+    }
+    "6"
+    {
+        "chat"		"{lightgreen}训练地图可在创意工坊搜索：1、HSTM（ᴿᴱᴻᴱ™ ）；2、终极特感训练（星魂桑）。在Bilibili搜索：Marco老师对两张训练地图的讲解"
+    }
+    "7"
+    {
+        "chat"		"{lightgreen}如发生争执，严禁在服务器内或交流群中谩骂、倒苦水，要1144请出门左转，否则会受到以下但不限于短时间服务器封禁、群聊禁言的惩罚"
+    }
+    "8"
+    {
+        "chat"		"{lightgreen}如遇到不公正待遇或有玩家恶意干扰正常游戏进行，请尽量截图或保留其他有力证据，联系事务群或Steam_WeiMeng"
+    }
+    "9"
+    {
+        "chat"		"{lightgreen}如遇到外挂，请获取Steam ID，并录制Demo，联系事务群或Steam_WeiMeng
+Steam ID获取：控制台输入status，复制昵称和ID。Demo录制和路径：控制台输入record #录制，输入stop保存；路径为steam\steamapps\common\Left 4 Dead 2\left4dead2
+"
+    }
+    "10"
+    {
+        "chat"		"{lightgreen}本服op不出售，谢绝赞助。op由德高望重、公正无私的白名单玩家，经过服主中长期观察后产生。长期游玩且#善待萌新#的玩家可以申请白名单"
+    }
+}
