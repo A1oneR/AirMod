@@ -11,17 +11,31 @@
 		"max_tank_z"		"1200.000000"
 		"tank_warpto"		"2168.357666 5803.427734 2464.031250"
 		"max_distance"		"400"
+		"ItemLimits"
+		{
+			"pain_pills"	"3"
+		}
 		"tank_ban_flow"
 		{
-			"Before elevator exit"
-			{
-				"min"		"38"
-				"max"		"79"
-			}
-			"Early spawns"
+//			"Before elevator exit"
+//			{
+//				"min"		"38"
+//				"max"		"79"
+//			}
+//			"Early spawns"
+//			{
+//				"min"		"0"
+//				"max"		"24"
+//			}
+			"Before elevator"
 			{
 				"min"		"0"
-				"max"		"24"
+				"max"		"78"
+			}
+			"After elevator"
+			{
+				"min"		"80"
+				"max"		"100"
 			}
 		}
 	}
@@ -33,6 +47,10 @@
 		"start_extra_dist"	"250.000000"
 		"end_dist"			"200.000000"
 		"horde_limit"		"120"
+		"ItemLimits"
+		{
+			"pain_pills"	"5"
+		}
 		"tank_ban_flow"
 		{
 			"One way drop"
@@ -50,6 +68,10 @@
 		"start_extra_dist"	"150.000000"
 		"end_dist"			"200.000000"
 		"horde_limit"		"150"
+		"ItemLimits"
+		{
+			"pain_pills"	"6"
+		}
 		"tank_ban_flow"
 		{
 			"Event escalators"
@@ -88,6 +110,10 @@
 		"start_dist"		"50.000000"
 		"start_extra_dist"	"0.000000"
 		"end_dist"			"150.000000"
+		"ItemLimits"
+		{
+			"pain_pills"	"3"
+		}
 		"witch_ban_flow"
 		{
 			"One way drop platforms"
@@ -104,7 +130,19 @@
 		"start_dist"		"50.000000"
 		"start_extra_dist"	"0.000000"
 		"end_dist"			"150.000000"
-		"horde_limit"		"120"
+		"horde_limit"		"150"
+		"ItemLimits"
+		{
+			"pain_pills"	"4"
+		}
+		"tank_ban_flow"
+		{
+			"Hardtankc2m2"
+			{
+				"min"		"50"
+				"max"		"65"
+			}
+		}
 		"witch_ban_flow"
 		{
 			"Ladder"
@@ -126,9 +164,18 @@
 		"start_dist"		"50.000000"
 		"start_extra_dist"	"200.000000"
 		"end_dist"			"150.000000"
-		"horde_limit"		"240"
+		"horde_limit"		"300"
+		"ItemLimits"
+		{
+			"pain_pills"	"5"
+		}
 		"tank_ban_flow"
 		{
+			"Hardtankc2m3"
+			{
+				"min"		"38"
+				"max"		"48"
+			}
 			"Coaster"
 			{
 				"min"		"56"
@@ -152,6 +199,10 @@
 		"start_extra_dist"	"150.000000"
 		"end_dist"			"250.000000"
 		"max_distance"		"500"
+		"ItemLimits"
+		{
+			"pain_pills"	"4"
+		}
 		"horde_limit"		"150"
 		"witch_ban_flow"
 		{
@@ -181,6 +232,10 @@
 		"start_dist"		"100.000000"
 		"start_extra_dist"	"0.000000"
 		"end_dist"			"200.000000"
+		"ItemLimits"
+		{
+			"pain_pills"	"4"
+		}
 		"tank_ban_flow"
 		{
 			"Before ferry (bugged spawn)"
@@ -198,6 +253,10 @@
 		"start_extra_dist"	"200.000000"
 		"end_dist"			"200.000000"
 		"max_distance"		"500"
+		"ItemLimits"
+		{
+			"pain_pills"	"4"
+		}
 	}
 	"c3m3_shantytown"
 	{
@@ -207,6 +266,10 @@
 		"start_extra_dist"	"200.000000"
 		"end_dist"			"200.000000"
 		"max_distance"		"600"
+		"ItemLimits"
+		{
+			"pain_pills"	"5"
+		}
 	}
 	"c3m4_plantation"
 	{
@@ -228,6 +291,10 @@
 		"start_extra_dist"	"500.000000"
 		"end_dist"			"275.000000"
 		"max_distance"		"400"
+		"ItemLimits"
+		{
+			"pain_pills"	"3"
+		}
 		"tank_ban_flow"
 		{
 			"Early spawns"
@@ -245,6 +312,10 @@
 		"start_extra_dist"	"250.000000"
 		"end_dist"			"150.000000"
 		"max_distance"		"600"
+		"ItemLimits"
+		{
+			"pain_pills"	"5"
+		}
 		"tank_ban_flow"
 		{
 			"Field"
@@ -270,6 +341,10 @@
 		"start_extra_dist"	"200.000000"
 		"end_dist"			"300.000000"
 		"max_distance"		"500"
+		"ItemLimits"
+		{
+			"pain_pills"	"4"
+		}
 		"tank_ban_flow"
 		{
 			"Elevator"
@@ -295,6 +370,10 @@
 		"start_extra_dist"	"275.000000"
 		"end_dist"			"200.000000"
 		"max_distance"		"400"
+		"ItemLimits"
+		{
+			"pain_pills"	"3"
+		}
 		"witch_ban_flow"
 		{
 			"Ladder"
@@ -325,6 +404,10 @@
 		"start_extra_dist"	"0.000000"
 		"end_dist"			"250.000000"
 		"max_distance"		"300"
+		"ItemLimits"
+		{
+			"pain_pills"	"2"
+		}
 		"tank_ban_flow"
 		{
 			"Early spawns"
@@ -342,6 +425,10 @@
 		"start_extra_dist"	"0.000000"
 		"end_dist"			"250.000000"
 		"horde_limit"		"180"
+		"ItemLimits"
+		{
+			"pain_pills"	"4"
+		}
 		"tank_ban_flow"
 		{
 			"CEDA trailer"
@@ -358,6 +445,10 @@
 		"start_dist"		"50.000000"
 		"start_extra_dist"	"200.000000"
 		"end_dist"			"250.000000"
+		"ItemLimits"
+		{
+			"pain_pills"	"5"
+		}
 		"tank_ban_flow"
 		{
 			"Sewer and parking lot"
@@ -387,6 +478,10 @@
 		"start_dist"		"50.000000"
 		"start_extra_dist"	"200.000000"
 		"end_dist"			"350.000000"
+		"ItemLimits"
+		{
+			"pain_pills"	"6"
+		}
 		"tank_ban_flow"
 		{
 			"Last one way drop"
@@ -412,6 +507,10 @@
 		"start_dist"		"50.000000"
 		"start_extra_dist"	"0.000000"
 		"end_dist"			"50.000000"
+		"ItemLimits"
+		{
+			"pain_pills"	"4"
+		}
 	}
 	"c6m2_bedlam"
 	{
@@ -421,6 +520,10 @@
 		"start_extra_dist"	"0.000000"
 		"end_dist"			"50.000000"
 		"max_distance"		"800"
+		"ItemLimits"
+		{
+			"pain_pills"	"7"
+		}
 		"horde_limit"		"150"
 		"tank_ban_flow"
 		{
@@ -451,6 +554,10 @@
 		"start_extra_dist"	"0.000000"
 		"end_dist"			"50.000000"
 		"max_distance"		"600"
+		"ItemLimits"
+		{
+			"pain_pills"	"5"
+		}
 	}
 	"c7m2_barge"
 	{
@@ -460,6 +567,10 @@
 		"start_extra_dist"	"0.000000"
 		"end_dist"			"50.000000"
 		"max_distance"		"700"
+		"ItemLimits"
+		{
+			"pain_pills"	"6"
+		}
 		"tank_ban_flow"
 		{
 			"Event (bugged spawn)"
@@ -489,6 +600,10 @@
 		"start_extra_dist"	"605.247620"
 		"end_point"			"2883.220703 2962.613037 -204.742737"
 		"end_dist"			"336.442200"
+		"ItemLimits"
+		{
+			"pain_pills"	"4"
+		}
 	}
 	"c8m2_subway"
 	{
@@ -497,6 +612,10 @@
 		"start_extra_dist"	"323.406708"
 		"end_point"			"11008.688477 4657.793945 49.151138"
 		"end_dist"			"180.738693"
+		"ItemLimits"
+		{
+			"pain_pills"	"5"
+		}
 	}
 	"c8m3_sewers"
 	{
@@ -505,6 +624,10 @@
 		"start_dist"		"50.000000"
 		"start_extra_dist"	"0.000000"
 		"end_dist"			"75.000000"
+		"ItemLimits"
+		{
+			"pain_pills"	"6"
+		}
 		"tank_ban_flow"
 		{
 			"Late warehouse and before one way drop"
@@ -543,6 +666,10 @@
 		"max_tank_z"		"4000.000000"
 		"tank_warpto"		"13439 15017 450"
 		"max_distance"		"500"
+		"ItemLimits"
+		{
+			"pain_pills"	"5"
+		}
 		"tank_ban_flow"
 		{
 			"Before elevator (bugged spawn)"
@@ -580,6 +707,10 @@
 		"end_point"			"153.076584 -1426.919556 -139.968750"
 		"end_dist"			"210.283035"
 		"max_distance"		"600"
+		"ItemLimits"
+		{
+			"pain_pills"	"6"
+		}
 	}
 	"c9m2_lots"
 	{
@@ -601,6 +732,10 @@
 		"start_extra_dist"	"587.266541"
 		"end_point"			"-10784.895508 -4906.771973 318.224670"
 		"end_dist"			"403.989594"
+		"ItemLimits"
+		{
+			"pain_pills"	"4"
+		}
 		"witch_ban_flow"
 		{
 			"Ladders"
@@ -617,6 +752,10 @@
 		"start_extra_dist"	"399.942505"
 		"end_point"			"-8339.282227 -5592.915039 0.031253"
 		"end_dist"			"322.081451"
+		"ItemLimits"
+		{
+			"pain_pills"	"5"
+		}
 	}
 	"c10m3_ranchhouse"
 	{
@@ -625,6 +764,10 @@
 		"start_extra_dist"	"327.413300"
 		"end_point"			"-2673.776611 107.736259 316.727081"
 		"end_dist"			"327.768036"
+		"ItemLimits"
+		{
+			"pain_pills"	"6"
+		}
 	}
 	"c10m4_mainstreet"
 	{
@@ -634,6 +777,10 @@
 		"end_point"			"1309.379883 -5479.276367 -26.821182"
 		"end_dist"			"324.451355"
 		"horde_limit"		"90"
+		"ItemLimits"
+		{
+			"pain_pills"	"7"
+		}
 		"tank_ban_flow"
 		{
 			"Start of event"
@@ -663,6 +810,10 @@
 		"end_point"			"5274.120605 2715.548584 88.261955"
 		"end_dist"			"314.896759"
 		"max_distance"		"300"
+		"ItemLimits"
+		{
+			"pain_pills"	"3"
+		}
 	}
 	"c11m2_offices"
 	{
@@ -671,6 +822,10 @@
 		"start_extra_dist"	"333.408081"
 		"end_point"			"7934.695801 6070.557617 48.318222"
 		"end_dist"			"310.929138"
+		"ItemLimits"
+		{
+			"pain_pills"	"5"
+		}
 	}
 	"c11m3_garage"
 	{
@@ -679,6 +834,10 @@
 		"start_extra_dist"	"304.760986"
 		"end_point"			"-343.016815 3583.830566 332.031250"
 		"end_dist"			"187.318344"
+		"ItemLimits"
+		{
+			"pain_pills"	"6"
+		}
 	}
 	"c11m4_terminal"
 	{
@@ -688,6 +847,10 @@
 		"end_point"			"3276.041992 4504.324707 181.974670"
 		"end_dist"			"343.399078"
 		"max_distance"		"500"
+		"ItemLimits"
+		{
+			"pain_pills"	"5"
+		}
 		"witch_ban_flow"
 		{
 			"Behind fence"
@@ -717,6 +880,10 @@
 		"end_point"			"-6468.546387 -6767.946777 377.974670"
 		"end_dist"			"275.937225"
 		"max_distance"		"300"
+		"ItemLimits"
+		{
+			"pain_pills"	"3"
+		}
 		"tank_ban_flow"
 		{
 			"Early spawns"
@@ -734,6 +901,10 @@
 		"end_point"			"-870.702148 -10408.813477 -63.968750"
 		"end_dist"			"261.087494"
 		"max_distance"		"400"
+		"ItemLimits"
+		{
+			"pain_pills"	"4"
+		}
 	}
 	"c12m3_bridge"
 	{
@@ -743,6 +914,10 @@
 		"end_point"			"7754.335938 -11443.834961 440.031250"
 		"end_dist"			"264.020966"
 		"max_distance"		"500"
+		"ItemLimits"
+		{
+			"pain_pills"	"5"
+		}
 		"horde_limit"		"90"
 		"tank_ban_flow"
 		{
@@ -761,6 +936,10 @@
 		"end_point"			"10398.775391 -310.353424 2.031253"
 		"end_dist"			"316.505157"
 		"max_distance"		"500"
+		"ItemLimits"
+		{
+			"pain_pills"	"5"
+		}
 		"horde_limit"		"90"
 		"tank_ban_flow"
 		{
@@ -799,6 +978,10 @@
 		"end_point"			"1186.061401 -1247.817627 389.251373"
 		"end_dist"			"604.894531"
 		"max_distance"		"300"
+		"ItemLimits"
+		{
+			"pain_pills"	"3"
+		}
 		"tank_ban_flow"
 		{
 			"After one way drop"
@@ -816,6 +999,10 @@
 		"end_point"			"470.932892 8823.397461 -368.968750"
 		"end_dist"			"324.996063"
 		"horde_limit"		"120"
+		"ItemLimits"
+		{
+			"pain_pills"	"6"
+		}
 		"tank_ban_flow"
 		{
 			"Event"
@@ -832,6 +1019,10 @@
 		"start_extra_dist"	"321.877747"
 		"end_point"			"6097.708496 -6337.365234 422.031250"
 		"end_dist"			"356.709808"
+		"ItemLimits"
+		{
+			"pain_pills"	"7"
+		}
 		"tank_ban_flow"
 		{
 			"Event and bridge descent"
@@ -849,6 +1040,7 @@
 		"end_point"			"-1823.846191 -1815.961670 -250.417389"
 		"end_dist"			"254.989624"
 		"max_distance"		"600"
+		"ItemLimits"
 	}
 	"c14m1_junkyard"
 	{
@@ -857,6 +1049,10 @@
 		"start_extra_dist"	"500.000000"
 		"end_point"			"-2992.162842 10403.122070 -92.863403"
 		"end_dist"			"350.000000"
+		"ItemLimits"
+		{
+			"pain_pills"	"8"
+		}
 	}
 	"c14m2_lighthouse"
 	{
@@ -878,73 +1074,7 @@
 			}
 		}
 	}
-	"c5m1_darkwaterfront"
-	{
-		"start_point"		"735.921692 732.535217 -481.968750"
-		"start_dist"		"57.458103"
-		"start_extra_dist"	"804.191406"
-		"end_point"			"-4351.050293 -1135.742554 -343.968750"
-		"end_dist"			"591.145630"
-		"max_distance"		"300"
-		"tank_ban_flow"
-		{
-			"Early spawns"
-			{
-				"min"		"0"
-				"max"		"38"
-			}
-		}
-	}
-	"c5m2_darkpark"
-	{
-		"start_point"		"-4331.847656 -1132.059937 -343.968750"
-		"start_dist"		"90.058136"
-		"start_extra_dist"	"604.716553"
-		"end_point"			"-9823.082031 -8162.369141 -220.767731"
-		"end_dist"			"487.969635"
-		"horde_limit"		"180"
-	}
-	"c5m3_darkcemetery"
-	{
-		"start_point"		"6304.688477 8218.079102 35.232285"
-		"start_dist"		"85.487289"
-		"start_extra_dist"	"492.614685"
-		"end_point"			"7466.641113 -9682.580078 139.226273"
-		"end_dist"			"402.227936"
-		"tank_ban_flow"
-		{
-			"Sewers and parking lot"
-			{
-				"min"		"50"
-				"max"		"70"
-			}
-		}
-	}
-	"c5m4_darkquarter"
-	{
-		"start_point"		"-3064.031494 4778.493164 103.226173"
-		"start_dist"		"75.451675"
-		"start_extra_dist"	"404.631805"
-		"end_point"			"1585.341553 -3387.864502 483.226257"
-		"end_dist"			"591.899353"
-		"tank_ban_flow"
-		{
-			"After one way drop"
-			{
-				"min"		"80"
-				"max"		"100"
-			}
-		}
-	}
-	"c5m5_darkbridge"
-	{
-		"start_point"		"-11922.366211 5976.044922 547.226318"
-		"start_dist"		"95.325073"
-		"start_extra_dist"	"270.602844"
-		"end_point"			"3015.024414 6265.400391 494.284149"
-		"end_dist"			"149.938278"
-		"max_distance"		"500"
-	}
+	//迂回前进Detour Ahead
 	"cdta_01detour"
 	{
 		"start_point"		"-581.311157 4279.300293 129.100113"
@@ -1010,145 +1140,99 @@
 			}
 		}
 	}
-	"l4d_deathaboard01_prison"
+	//喋血蜃楼Diescraper Redux
+	"l4d2_diescraper1_apartment_361"
 	{
-		"start_point"		"1172.334229 3525.726318 264.031250"
-		"start_dist"		"359.071625"
-		"start_extra_dist"	"854.892578"
-		"end_point"			"1024.260742 -708.012878 -511.968750"
-		"end_dist"			"437.646271"
-	}
-	"l4d_deathaboard02_yard"
-	{
-		"start_point"		"583.303711 2430.031250 128.031250"
-		"start_dist"		"193.628845"
-		"start_extra_dist"	"414.816742"
-		"end_point"			"2265.425537 386.693542 -231.968750"
-		"end_dist"			"422.613495"
-	}
-	"l4d_deathaboard03_docks"
-	{
-		"start_point"		"-699.597900 -135.347733 -95.968750"
-		"start_dist"		"213.407654"
-		"start_extra_dist"	"445.357971"
-		"end_point"			"7204.936523 1781.486450 268.031250"
-		"end_dist"			"129.135315"
+		"start_point"		"9000.979492 7243.940430 831.974670"
+		"end_point"			"10251.913086 4722.644531 52.338150"
+		"start_dist"		"50.000000"
+		"start_extra_dist"	"400.000000"
+		"end_dist"			"50.000000"
 		"tank_ban_flow"
 		{
 			"1"
 			{
-				"min"		"25"
+				"min"		"30"
 				"max"		"50"
 			}
 		}
 	}
-	"l4d_deathaboard04_ship"
+	"l4d2_diescraper2_streets_361"
 	{
-		"start_point"		"-1490.525269 705.338257 32.031250"
-		"start_dist"		"143.486145"
-		"start_extra_dist"	"95.611107"
-		"end_point"			"3464.061279 -922.227356 -263.968750"
-		"end_dist"			"229.138062"
-		"tank_ban_flow"
-		{
-			"1"
-			{
-				"min"		"0"
-				"max"		"40"
-			}
-		}
+		"start_point"		"10250.208008 4723.329590 70.338150"
+		"end_point"			"256.697845 144.240356 2.031250"
+		"start_dist"		"50.000000"
+		"start_extra_dist"	"350.000000"
+		"end_dist"			"50.000000"
+		"horde_limit"		"90"
 	}
-	"l4d_deathaboard05_light"
+	"l4d2_diescraper3_mid_361"
 	{
-		"start_point"		"-2383.999756 -2986.743652 88.031250"
-		"start_dist"		"185.257492"
-		"start_extra_dist"	"194.090973"
+		"start_point"		"286.949280 145.143188 -1841.968750"
+		"end_point"			"-14.215425 -485.376556 510.031250"
+		"start_dist"		"50.000000"
+		"start_extra_dist"	"200.000000"
+		"end_dist"			"50.000000"
+		"horde_limit"		"60"
+	}
+	"l4d2_diescraper4_top_361"
+	{
+		"start_point"		"-10.403743 -485.376556 -497.968750"
+		"end_point"			"1307.318848 3.531982 -68.582138"
+		"start_dist"		"50.000000"
+		"start_extra_dist"	"400.000000"
+		"end_dist"			"50.000000"
+	}
+	//黑色狂欢节（改）Dark Carnival: Remix
+	"dkr_m1_motel"
+	{
+		"start_point"		"10893.254883 -4504.161133 -540.146729"
+		"end_point"			"-8153.598145 745.629883 -1004.968750"
+		"start_dist"		"150.000000"
+		"start_extra_dist"	"200.000000"
+		"end_dist"			"100.000000"
+	}
+	"dkr_m2_carnival"
+	{
+		"start_point"		"9164.375977 461.308594 -84.740158"
+		"end_point"			"-1382.029175 7025.711914 96.031250"
+		"start_dist"		"100.000000"
+		"start_extra_dist"	"0.000000"
+		"end_dist"			"300.000000"
+		"horde_limit"		"120"
+	}
+	"dkr_m3_tunneloflove"
+	{
+		"start_point"		"1349.780151 -5061.177734 40.031250"
+		"end_point"			"-3580.425049 5903.968750 -57.968750"
+		"start_dist"		"100.000000"
+		"start_extra_dist"	"300.000000"
+		"end_dist"			"200.000000"
+		"horde_limit"		"240"
+	}
+	"dkr_m4_ferris"
+	{
+		"start_point"		"-2594.930664 -11012.232422 70.031250"
+		"end_point"			"-3551.237793 4287.419922 -277.905365"
+		"start_dist"		"100.000000"
+		"start_extra_dist"	"300.000000"
+		"end_dist"			"500.000000"
+		"max_distance"		"500"
+		"horde_limit"		"150"
+	}
+	"dkr_m5_stadium"
+	{
+		"start_point"		"-3571.710693 4293.029785 -277.905365"
+		"end_point"			"1301.486084 2320.458008 -272.820740"
+		"start_dist"		"200.000000"
+		"start_extra_dist"	"500.000000"
+		"end_dist"			"150.000000"
 		"ItemLimits"
 		{
-			"pain_pills"	"0"
+			"pain_pills"	"4"
 		}
 	}
-	"l4d_ihm01_forest"
-	{
-		"start_point"		"-1832.194580 152.090195 41.045280"
-		"start_dist"		"228.211761"
-		"start_extra_dist"	"387.249268"
-		"end_point"			"1704.728271 -8333.527344 87.642601"
-		"end_dist"			"247.891632"
-	}
-	"l4d_ihm02_manor"
-	{
-		"start_point"		"601.349548 2955.968750 175.381592"
-		"start_dist"		"207.611847"
-		"start_extra_dist"	"237.150528"
-		"end_point"			"-3221.213867 2582.877197 171.136597"
-		"end_dist"			"250.894577"
-	}
-	"l4d_ihm03_underground"
-	{
-		"start_point"		"8803.642578 -297.364868 35.136597"
-		"start_dist"		"155.457993"
-		"start_extra_dist"	"263.341949"
-		"end_point"			"3271.968750 7977.582031 -2256.968750"
-		"end_dist"			"335.011475"
-	}
-	"l4d_ihm04_lumberyard"
-	{
-		"start_point"		"-10009.968750 -10641.541992 -177.968750"
-		"start_dist"		"140.137665"
-		"start_extra_dist"	"329.797272"
-		"end_point"			"2004.079468 1037.415161 -188.618408"
-		"end_dist"			"304.708099"
-		"max_distance"		"600"
-	}
-	"l4d_ihm05_lakeside"
-	{
-		"start_point"		"-684.040649 -4216.978027 -17.616570"
-		"start_dist"		"170.021622"
-		"start_extra_dist"	"346.297455"
-		"end_point"			"5840.246094 9788.924805 60.349205"
-		"end_dist"			"540.438049"
-		"ItemLimits"
-		{
-			"pain_pills"	"0"
-		}
-	}
-	"bloodtracks_01"
-	{
-		"start_point"		"3633.225098 9182.102539 305.031250"
-		"start_dist"		"100.137680"
-		"start_extra_dist"	"974.442017"
-		"end_point"			"2489.081055 1259.860107 598.031250"
-		"end_dist"			"279.215881"
-	}
-	"bloodtracks_02"
-	{
-		"end_point"			"5533.325195 -7508.791016 -2049.168701"
-		"end_dist"			"345.644775"
-		"start_point"		"9041.178711 5355.283203 -2477.968750"
-		"start_dist"		"78.584602"
-		"start_extra_dist"	"264.419159"
-	}
-	"bloodtracks_03"
-	{
-		"start_point"		"-6291.274414 9638.728516 -2755.968750"
-		"start_dist"		"76.679153"
-		"start_extra_dist"	"130.744766"
-		"end_point"			"3956.997559 -4572.921875 -3026.025391"
-		"end_dist"			"114.179108"
-	}
-	"bloodtracks_04"
-	{
-		"start_point"		"3746.593018 -4707.327637 -3026.025391"
-		"start_dist"		"113.105247"
-		"start_extra_dist"	"216.522690"
-		"end_point"			"4238.532715 -11658.243164 -2224.328857"
-		"end_dist"			"1521.507202"
-		"ItemLimits"
-		{
-			"pain_pills"	"0"
-		}
-	}
+	//绝境逢生Carried Off
 	"cwm1_intro"
 	{
 		"start_point"		"2012.118164 -2094.778809 18.982275"
@@ -1194,6 +1278,7 @@
 		"end_dist"			"1904.152710"
 		"max_distance"		"700"
 	}
+	//闪电突袭2Suicide Blitz 2
 	"l4d2_stadium1_apartment"
 	{
 		"start_point"		"-350.822113 1008.031250 35.031250"
@@ -1255,6 +1340,318 @@
 		"end_dist"			"2375.248535"
 		"max_distance"		"700"
 	}
+	//活死人黎明Dead before Dawn DC
+	"l4d_dbd2dc_anna_is_gone"
+	{
+		"start_point"		"3325.206787 -2614.453857 39.508949"
+		"start_dist"		"112.968796"
+		"start_extra_dist"	"357.132141"
+		"end_point"			"2948.021729 7602.731445 -604.782043"
+		"end_dist"			"142.267410"
+	}
+	"l4d_dbd2dc_the_mall"
+	{
+		"start_point"		"-1018.316406 -2429.388672 -860.782043"
+		"start_dist"		"203.891953"
+		"start_extra_dist"	"577.908813"
+		"end_point"			"137.894608 5129.338867 -637.909546"
+		"end_dist"			"464.308899"
+		"max_distance"		"600"
+	}
+	"l4d_dbd2dc_clean_up"
+	{
+		"start_point"		"-365.654816 3180.702148 -636.909546"
+		"start_dist"		"128.250610"
+		"start_extra_dist"	"244.648331"
+		"end_point"			"-2060.603027 6556.208496 -671.968750"
+		"end_dist"			"286.359802"
+		"max_distance"		"700"
+	}
+	"l4d_dbd2dc_undead_center"
+	{
+		"start_point"		"-1953.168945 6571.233887 -671.968750"
+		"start_dist"		"100.454994"
+		"start_extra_dist"	"188.167191"
+		"end_point"			"-7367.650391 8434.535156 -671.968750"
+		"end_dist"			"365.062012"
+	}
+	"l4d_dbd2dc_new_dawn"
+	{
+		"start_point"		"-3574.833740 2068.519531 -1279.968750"
+		"start_dist"		"132.993073"
+		"start_extra_dist"	"306.183685"
+		"end_point"			"-463.786469 876.165771 -243.441345"
+		"end_dist"			"1558.433960"
+		"max_distance"		"500"
+		"tank_ban_flow"
+		{
+			"1"
+			{
+				"min"		"0"
+				"max"		"70"
+			}
+		}
+	}
+	//暴风骤雨：暴雨Hard Rain: Downpour
+	"dprm1_milltown_a"
+	{
+		"start_point"		"-6588.341797 7675.165527 96.038345"
+		"end_point"			"3935.251953 -1573.986206 232.281250"
+		"start_dist"		"200.000000"
+		"start_extra_dist"	"200.000000"
+		"end_dist"			"300.000000"
+		"max_distance"		"500"
+		"ItemLimits"
+		{
+			"pain_pills"	"5"
+		}
+		"tank_ban_flow"
+		{
+			"Early spawns_dprm1"
+			{
+				"min"		"0"
+				"max"		"20"
+			}
+		}
+	}
+	"dprm2_sugarmill_a"
+	{
+		"start_point"		"3735.611084 -1667.831177 232.031250"
+		"end_point"			"-1797.393066 -13707.108398 130.031250"
+		"start_dist"		"300.000000"
+		"start_extra_dist"	"0.000000"
+		"end_dist"			"200.000000"
+		"max_distance"		"600"
+		"ItemLimits"
+		{
+			"pain_pills"	"6"
+		}
+		"tank_ban_flow"
+		{
+			"Field"
+			{
+				"min"		"80"
+				"max"		"100"
+			}
+		}
+		"witch_ban_flow"
+		{
+			"Field"
+			{
+				"min"		"80"
+				"max"		"100"
+			}
+		}
+	}
+	"dprm3_sugarmill_b"
+	{
+		"start_point"		"-1788.631592 -13717.489258 130.031250"
+		"end_point"			"3730.589844 -1674.089966 232.031250"
+		"start_dist"		"200.000000"
+		"start_extra_dist"	"000.000000"
+		"end_dist"			"300.000000"
+		"max_distance"		"600"
+		"ItemLimits"
+		{
+			"pain_pills"	"6"
+		}
+		"tank_ban_flow"
+		{
+			"Elevator"
+			{
+				"min"		"30"
+				"max"		"36"
+			}
+		}
+		"witch_ban_flow"
+		{
+			"Field and elevator"
+			{
+				"min"		"0"
+				"max"		"29"
+			}
+		}
+	}
+	"dprm4_milltown_b"
+	{
+		"start_point"		"3953.058594 -1562.972290 232.281250"
+		"end_point"			"-3217.998291 7792.274902 120.031250"
+		"start_dist"		"300.000000"
+		"start_extra_dist"	"100.000000"
+		"end_dist"			"500.000000"
+		"max_distance"		"500"
+		"ItemLimits"
+		{
+			"pain_pills"	"5"
+		}
+		"witch_ban_flow"
+		{
+			"Ladder"
+			{
+				"min"		"33"
+				"max"		"54"
+			}
+		}
+	}
+	"dprm5_milltown_escape"
+	{
+		"start_point"		"-3455.657471 7796.145020 120.031250"
+		"end_point"			"-6443.983887 6488.218262 100.031250"
+		"start_dist"		"500.000000"
+		"start_extra_dist"	"200.000000"
+		"end_dist"			"100.000000"
+		"max_distance"		"600"
+		"ItemLimits"
+		{
+			"pain_pills"	"4"
+		}
+	}
+//-----------------------------------------------------------------------------------------------
+//没有加入到WMV的第三方地图
+//-----------------------------------------------------------------------------------------------
+	//Death Aboard
+	"l4d_deathaboard01_prison"
+	{
+		"start_point"		"1172.334229 3525.726318 264.031250"
+		"start_dist"		"359.071625"
+		"start_extra_dist"	"854.892578"
+		"end_point"			"1024.260742 -708.012878 -511.968750"
+		"end_dist"			"437.646271"
+	}
+	"l4d_deathaboard02_yard"
+	{
+		"start_point"		"583.303711 2430.031250 128.031250"
+		"start_dist"		"193.628845"
+		"start_extra_dist"	"414.816742"
+		"end_point"			"2265.425537 386.693542 -231.968750"
+		"end_dist"			"422.613495"
+	}
+	"l4d_deathaboard03_docks"
+	{
+		"start_point"		"-699.597900 -135.347733 -95.968750"
+		"start_dist"		"213.407654"
+		"start_extra_dist"	"445.357971"
+		"end_point"			"7204.936523 1781.486450 268.031250"
+		"end_dist"			"129.135315"
+		"tank_ban_flow"
+		{
+			"1"
+			{
+				"min"		"25"
+				"max"		"50"
+			}
+		}
+	}
+	"l4d_deathaboard04_ship"
+	{
+		"start_point"		"-1490.525269 705.338257 32.031250"
+		"start_dist"		"143.486145"
+		"start_extra_dist"	"95.611107"
+		"end_point"			"3464.061279 -922.227356 -263.968750"
+		"end_dist"			"229.138062"
+		"tank_ban_flow"
+		{
+			"1"
+			{
+				"min"		"0"
+				"max"		"40"
+			}
+		}
+	}
+	"l4d_deathaboard05_light"
+	{
+		"start_point"		"-2383.999756 -2986.743652 88.031250"
+		"start_dist"		"185.257492"
+		"start_extra_dist"	"194.090973"
+		"ItemLimits"
+		{
+			"pain_pills"	"0"
+		}
+	}
+	//I Hate Mountains
+	"l4d_ihm01_forest"
+	{
+		"start_point"		"-1832.194580 152.090195 41.045280"
+		"start_dist"		"228.211761"
+		"start_extra_dist"	"387.249268"
+		"end_point"			"1704.728271 -8333.527344 87.642601"
+		"end_dist"			"247.891632"
+	}
+	"l4d_ihm02_manor"
+	{
+		"start_point"		"601.349548 2955.968750 175.381592"
+		"start_dist"		"207.611847"
+		"start_extra_dist"	"237.150528"
+		"end_point"			"-3221.213867 2582.877197 171.136597"
+		"end_dist"			"250.894577"
+	}
+	"l4d_ihm03_underground"
+	{
+		"start_point"		"8803.642578 -297.364868 35.136597"
+		"start_dist"		"155.457993"
+		"start_extra_dist"	"263.341949"
+		"end_point"			"3271.968750 7977.582031 -2256.968750"
+		"end_dist"			"335.011475"
+	}
+	"l4d_ihm04_lumberyard"
+	{
+		"start_point"		"-10009.968750 -10641.541992 -177.968750"
+		"start_dist"		"140.137665"
+		"start_extra_dist"	"329.797272"
+		"end_point"			"2004.079468 1037.415161 -188.618408"
+		"end_dist"			"304.708099"
+		"max_distance"		"600"
+	}
+	"l4d_ihm05_lakeside"
+	{
+		"start_point"		"-684.040649 -4216.978027 -17.616570"
+		"start_dist"		"170.021622"
+		"start_extra_dist"	"346.297455"
+		"end_point"			"5840.246094 9788.924805 60.349205"
+		"end_dist"			"540.438049"
+		"ItemLimits"
+		{
+			"pain_pills"	"0"
+		}
+	}
+	//Blood Tracks
+	"bloodtracks_01"
+	{
+		"start_point"		"3633.225098 9182.102539 305.031250"
+		"start_dist"		"100.137680"
+		"start_extra_dist"	"974.442017"
+		"end_point"			"2489.081055 1259.860107 598.031250"
+		"end_dist"			"279.215881"
+	}
+	"bloodtracks_02"
+	{
+		"end_point"			"5533.325195 -7508.791016 -2049.168701"
+		"end_dist"			"345.644775"
+		"start_point"		"9041.178711 5355.283203 -2477.968750"
+		"start_dist"		"78.584602"
+		"start_extra_dist"	"264.419159"
+	}
+	"bloodtracks_03"
+	{
+		"start_point"		"-6291.274414 9638.728516 -2755.968750"
+		"start_dist"		"76.679153"
+		"start_extra_dist"	"130.744766"
+		"end_point"			"3956.997559 -4572.921875 -3026.025391"
+		"end_dist"			"114.179108"
+	}
+	"bloodtracks_04"
+	{
+		"start_point"		"3746.593018 -4707.327637 -3026.025391"
+		"start_dist"		"113.105247"
+		"start_extra_dist"	"216.522690"
+		"end_point"			"4238.532715 -11658.243164 -2224.328857"
+		"end_dist"			"1521.507202"
+		"ItemLimits"
+		{
+			"pain_pills"	"0"
+		}
+	}
+	//City 17
 	"l4d2_city17_01"
 	{
 		"start_point"		"4062.740234 -5380.488770 -84.985329"
@@ -1323,6 +1720,7 @@
 			"pain_pills"	"0"
 		}
 	}
+	//Haunted Forest
 	"hf01_theforest"
 	{
 		"start_point"		"-10749.938477 4779.373535 0.445169"
@@ -1356,6 +1754,7 @@
 		"end_point"			"1585.235596 8390.712891 -1028.968750"
 		"end_dist"			"885.892273"
 	}
+	//drop dead gorges
 	"ddg1_tower_v1_6"
 	{
 		"start_point"		"274.642731 -719.995789 -224.017731"
@@ -1384,57 +1783,7 @@
 			"pain_pills"	"0"
 		}
 	}
-	"l4d_dbd2dc_anna_is_gone"
-	{
-		"start_point"		"3325.206787 -2614.453857 39.508949"
-		"start_dist"		"112.968796"
-		"start_extra_dist"	"357.132141"
-		"end_point"			"2948.021729 7602.731445 -604.782043"
-		"end_dist"			"142.267410"
-	}
-	"l4d_dbd2dc_the_mall"
-	{
-		"start_point"		"-1018.316406 -2429.388672 -860.782043"
-		"start_dist"		"203.891953"
-		"start_extra_dist"	"577.908813"
-		"end_point"			"137.894608 5129.338867 -637.909546"
-		"end_dist"			"464.308899"
-		"max_distance"		"600"
-	}
-	"l4d_dbd2dc_clean_up"
-	{
-		"start_point"		"-365.654816 3180.702148 -636.909546"
-		"start_dist"		"128.250610"
-		"start_extra_dist"	"244.648331"
-		"end_point"			"-2060.603027 6556.208496 -671.968750"
-		"end_dist"			"286.359802"
-		"max_distance"		"700"
-	}
-	"l4d_dbd2dc_undead_center"
-	{
-		"start_point"		"-1953.168945 6571.233887 -671.968750"
-		"start_dist"		"100.454994"
-		"start_extra_dist"	"188.167191"
-		"end_point"			"-7367.650391 8434.535156 -671.968750"
-		"end_dist"			"365.062012"
-	}
-	"l4d_dbd2dc_new_dawn"
-	{
-		"start_point"		"-3574.833740 2068.519531 -1279.968750"
-		"start_dist"		"132.993073"
-		"start_extra_dist"	"306.183685"
-		"end_point"			"-463.786469 876.165771 -243.441345"
-		"end_dist"			"1558.433960"
-		"max_distance"		"500"
-		"tank_ban_flow"
-		{
-			"1"
-			{
-				"min"		"0"
-				"max"		"70"
-			}
-		}
-	}
+	//Urban Flight
 	"uf1_boulevard"
 	{
 		"start_point"		"-232.634720 -1984.366577 351.766357"
@@ -1475,6 +1824,7 @@
 		"end_point"			"-697.423767 -182.836334 214.806290"
 		"end_dist"			"1754.263794"
 	}
+	//One4Nine
 	"l4d_149_1"
 	{
 		"start_point"		"-1462.563477 -1781.392212 82.864456"
@@ -1543,6 +1893,7 @@
 			"pain_pills"	"0"
 		}
 	}
+	//Tour of Terror
 	"eu01_residential_b16"
 	{
 		"start_point"		"2261.835449 -2570.114990 771.031250"
@@ -1595,6 +1946,7 @@
 			"pain_pills"	"0"
 		}
 	}
+	//Warcelona
 	"srocchurch"
 	{
 		"start_point"		"1084.297607 2462.667236 168.901855"
@@ -1641,6 +1993,7 @@
 		"end_dist"			"1572.107178"
 		"max_distance"		"800"
 	}
+	//????
 	"jsarena201_town"
 	{
 		"start_point"		"497.707031 -1611.576416 62.031250"
@@ -1707,6 +2060,7 @@
 			}
 		}
 	}
+	//Firetower Trail
 	"versus_1"
 	{
 		"start_point"		"3422.058838 9965.772461 -1884.943359"
@@ -1767,6 +2121,7 @@
 			}
 		}
 	}
+	//????
 	"l4d2_bts01_forest"
 	{
 		"start_point"		"4130.246582 -9368.455078 6046.454590"
@@ -1833,6 +2188,7 @@
 		"start_extra_dist"	"350.000000"
 		"end_dist"			"100.000000"
 	}
+	//AirCrash(MAYBE????)
 	"AirCrash"
 	{
 		"start_point"		"-2894.737061 832.790588 62.031250"
@@ -1890,48 +2246,7 @@
 		"start_extra_dist"	"900.000000"
 		"end_dist"			"75.000000"
 	}
-	"l4d2_diescraper1_apartment_361"
-	{
-		"start_point"		"9000.979492 7243.940430 831.974670"
-		"end_point"			"10251.913086 4722.644531 52.338150"
-		"start_dist"		"50.000000"
-		"start_extra_dist"	"400.000000"
-		"end_dist"			"50.000000"
-		"tank_ban_flow"
-		{
-			"1"
-			{
-				"min"		"30"
-				"max"		"50"
-			}
-		}
-	}
-	"l4d2_diescraper2_streets_361"
-	{
-		"start_point"		"10250.208008 4723.329590 70.338150"
-		"end_point"			"256.697845 144.240356 2.031250"
-		"start_dist"		"50.000000"
-		"start_extra_dist"	"350.000000"
-		"end_dist"			"50.000000"
-		"horde_limit"		"90"
-	}
-	"l4d2_diescraper3_mid_361"
-	{
-		"start_point"		"286.949280 145.143188 -1841.968750"
-		"end_point"			"-14.215425 -485.376556 510.031250"
-		"start_dist"		"50.000000"
-		"start_extra_dist"	"200.000000"
-		"end_dist"			"50.000000"
-		"horde_limit"		"60"
-	}
-	"l4d2_diescraper4_top_361"
-	{
-		"start_point"		"-10.403743 -485.376556 -497.968750"
-		"end_point"			"1307.318848 3.531982 -68.582138"
-		"start_dist"		"50.000000"
-		"start_extra_dist"	"400.000000"
-		"end_dist"			"50.000000"
-	}
+	//????
 	"damitdc1"
 	{
 		"start_point"		"1733.933838 11597.541016 -606.293701"
@@ -1999,6 +2314,7 @@
 			}
 		}
 	}
+	//thebloodymoors
 	"l4d_tbm_1"
 	{
 		"start_point"		"5953.716797 -10323.491211 164.946655"
@@ -2077,6 +2393,7 @@
 			}
 		}
 	}
+	//fallindeath
 	"l4d2_fallindeath01"
 	{
 		"start_point"		"214.333710 -1407.492676 222.812622"
@@ -2122,6 +2439,7 @@
 			}
 		}
 	}
+	//daybreak
 	"l4d2_daybreak01_hotel"
 	{
 		"start_point"		"90.343987 0.308769 62.031250"
@@ -2222,53 +2540,5 @@
 		"start_point"		"-3438.182129 310.360443 54.131248"
 		"start_dist"		"50.000000"
 		"start_extra_dist"	"500.000000"
-	}
-	"dkr_m1_motel"
-	{
-		"start_point"		"10893.254883 -4504.161133 -540.146729"
-		"end_point"			"-8153.598145 745.629883 -1004.968750"
-		"start_dist"		"150.000000"
-		"start_extra_dist"	"200.000000"
-		"end_dist"			"100.000000"
-	}
-	"dkr_m2_carnival"
-	{
-		"start_point"		"9164.375977 461.308594 -84.740158"
-		"end_point"			"-1382.029175 7025.711914 96.031250"
-		"start_dist"		"100.000000"
-		"start_extra_dist"	"0.000000"
-		"end_dist"			"300.000000"
-		"horde_limit"		"120"
-	}
-	"dkr_m3_tunneloflove"
-	{
-		"start_point"		"1349.780151 -5061.177734 40.031250"
-		"end_point"			"-3580.425049 5903.968750 -57.968750"
-		"start_dist"		"100.000000"
-		"start_extra_dist"	"300.000000"
-		"end_dist"			"200.000000"
-		"horde_limit"		"240"
-	}
-	"dkr_m4_ferris"
-	{
-		"start_point"		"-2594.930664 -11012.232422 70.031250"
-		"end_point"			"-3551.237793 4287.419922 -277.905365"
-		"start_dist"		"100.000000"
-		"start_extra_dist"	"300.000000"
-		"end_dist"			"500.000000"
-		"max_distance"		"500"
-		"horde_limit"		"150"
-	}
-	"dkr_m5_stadium"
-	{
-		"start_point"		"-3571.710693 4293.029785 -277.905365"
-		"end_point"			"1301.486084 2320.458008 -272.820740"
-		"start_dist"		"200.000000"
-		"start_extra_dist"	"500.000000"
-		"end_dist"			"150.000000"
-		"ItemLimits"
-		{
-			"pain_pills"	"4"
-		}
 	}
 }
