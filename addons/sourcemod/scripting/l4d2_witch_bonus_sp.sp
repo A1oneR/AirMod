@@ -15,6 +15,7 @@
 #define IS_SURVIVOR_ALIVE(%1)   (IS_VALID_SURVIVOR(%1) && IsPlayerAlive(%1))
 #define IS_INFECTED_ALIVE(%1)   (IS_VALID_INFECTED(%1) && IsPlayerAlive(%1))
 
+new const TEAM_SURVIVOR = 2;
 new						iAttack												= 0;
 new     bool:           g_bLateLoad                                         = false;
 new     Handle:         g_hCvarBonus                                        = INVALID_HANDLE;
@@ -52,11 +53,12 @@ public OnPluginStart()
 {
     HookEvent("witch_spawn", Event_WitchSpawned, EventHookMode_Post);
     HookEvent("witch_killed", Event_WitchKilled, EventHookMode_Post);
+	HookEvent("player_death", PlayerDied_Event, EventHookMode_Post);
 
     g_hCvarBonus = CreateConVar("sm_simple_witch_bonus", "50", "Bonus points to award for clean witch kills.", FCVAR_NONE, true, 0.0);
     g_hCvarPenalty = CreateConVar("sm_simple_witch_penalty", "25", "Penalty for witch each hit.", FCVAR_NONE, true, 0.0);
     g_hCvarMin = CreateConVar("sm_simple_witch_min", "-25", "Max Penalty can get.", FCVAR_NONE, true);
-    g_hCvarWitchAlivePenalty = CreateConVar("sm_simple_witch_alive_penalty", "-25", "Penalty for witch alive.", FCVAR_NONE, true);
+    g_hCvarWitchAlivePenalty = CreateConVar("sm_simple_witch_alive_penalty", "25", "Penalty for witch alive.", FCVAR_NONE, true);
     g_hCvarPrint = CreateConVar("sm_witch_bonus_print", "1", "Should we print when we award points for killing the witch?", FCVAR_NONE, true, 0.0, true, 1.0);
     g_hCvarBonusAlways = CreateConVar("sm_witch_bonus_always", "0", "Should you receive points when something other than survivors kills witch?", FCVAR_NONE, true, 0.0, true, 1.0);
 
@@ -90,7 +92,6 @@ public OnEntityDestroyed(entity)
     FormatEx(witch_key, sizeof(witch_key), "%x", entity);
     
     RemoveFromTrie(g_hWitchTrie, witch_key);
-    iAttack = 0;
 }
 
 // witch tracking
@@ -118,10 +119,27 @@ public Action: Event_WitchKilled(Handle:event, const String:name[], bool:dontBro
     FormatEx(witch_key, sizeof(witch_key), "%x", witch);
 
     GiveWitchBonus();
-	
-    iAttack = 0;
+	WitchReset();
 
     return Plugin_Continue;
+}
+
+public PlayerDied_Event(Handle:event, const String:name[], bool:dontBroadcast)
+{
+	new userId = GetEventInt(event, "userid");
+	new victim = GetClientOfUserId(userId);
+	new attacker = GetEventInt(event, "attackerentid");
+
+	if (IsClientAndInGame(victim) && GetClientTeam(victim) == TEAM_SURVIVOR && IsWitch(attacker))
+	{
+		GiveWitchBonus();
+		WitchReset();
+	}
+}
+
+public Action:WitchReset() 
+{
+	iAttack = 0;
 }
 
 // track witch doing damage to survivors
@@ -133,6 +151,7 @@ public Action: OnTakeDamageByWitch(victim, &attacker, &inflictor, &Float:damage,
             FormatEx(witch_key, sizeof(witch_key), "%x", attacker);
             SetTrieValue(g_hWitchTrie, witch_key, 1);
             iAttack += 1;
+			//PrintToChatAll("iAttack+1, now %i", iAttack);
         }
     }
 }
@@ -144,7 +163,7 @@ public Action:L4D2_OnEndVersusModeRound(bool:countSurvivors)
 	{
         if ( IsWitch(i) && iSurvivalMultiplier > 0) 
 		{
-			PBONUS_AddRoundBonus(GetConVarInt(g_hCvarWitchAlivePenalty), true);
+			PBONUS_AddRoundBonus(-GetConVarInt(g_hCvarWitchAlivePenalty), true);
 			CreateTimer(5.5, PrintWitchPenalty, _, TIMER_FLAG_NO_MAPCHANGE);
 		    
         }
@@ -214,4 +233,9 @@ bool:IsPlayerIncap(client)
 bool:IsPlayerLedged(client)
 {
 	return bool:(GetEntProp(client, Prop_Send, "m_isHangingFromLedge") | GetEntProp(client, Prop_Send, "m_isFallingFromLedge"));
+}
+
+stock bool:IsClientAndInGame(index)
+{
+	return (index > 0 && index <= MaxClients && IsClientInGame(index));
 }
