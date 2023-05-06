@@ -1,0 +1,13 @@
+"Phrases"
+{
+	"VOTE_DISPLAY_MSG"
+	{
+		"en"			"Start mix by rank"
+	}
+
+	"NO_RANK"
+	{
+		"#format"		"{1:N}"
+		"en"			"Mix member {olive}{1} {default}has no rank. {olive}Mix rollback"
+	}
+}
