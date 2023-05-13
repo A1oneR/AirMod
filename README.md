@@ -13,6 +13,8 @@ Alright, English stop here sry.
 
 Airmod仅是一个旁系插件，你需要完整的[Zonemod](https://github.com/SirPlease/L4D2-Competitive-Rework)来运行它。
 
+Airmod包中包含了一个较为竞技化的WeiMeng包抗插件，有需要可以选择
+
 ----------------
 
 #### 插件特色
